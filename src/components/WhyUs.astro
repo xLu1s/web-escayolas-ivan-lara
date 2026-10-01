@@ -1,24 +1,35 @@
 ---
-import { reasons } from '../data/site';
+import { commitments, site } from '../data/site';
 import Icon from './Icon.astro';
 ---
 
 <section class="section" id="porque">
-  <div class="container">
-    <div class="section-head" data-reveal>
+  <div class="container why__grid">
+    <div class="why__intro" data-reveal>
       <span class="eyebrow">Por qué elegirnos</span>
-      <h2>Más de 25 años haciendo bien las cosas</h2>
-      <p>La experiencia de un oficio de toda la vida, con la seriedad y el cuidado que tu casa merece.</p>
+      <h2>Trabajos bien hechos, sin sorpresas</h2>
+      <p>
+        Llevamos más de {site.years} años haciendo lo mismo y hacerlo bien: escayola, pladur y
+        aislamientos con acabados que aguantan el paso del tiempo. Esto es lo que nos comprometemos a
+        darte en cada obra.
+      </p>
+
+      <div class="why__stat">
+        <strong>{site.years}+</strong>
+        <span>años de experiencia en escayola, pladur y aislamientos</span>
+      </div>
     </div>
 
-    <div class="reasons__grid">
-      {reasons.map((r, i) => (
-        <div class="reason" data-reveal style={`--delay:${i * 70}ms`}>
-          <span class="reason__icon"><Icon name={r.icon} /></span>
-          <h3>{r.title}</h3>
-          <p>{r.text}</p>
-        </div>
+    <ul class="why__list" data-reveal style="--delay:120ms">
+      {commitments.map((c) => (
+        <li>
+          <span class="why__ico"><Icon name={c.icon} /></span>
+          <div>
+            <h3>{c.title}</h3>
+            <p>{c.text}</p>
+          </div>
+        </li>
       ))}
-    </div>
+    </ul>
   </div>
 </section>

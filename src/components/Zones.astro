@@ -1,5 +1,5 @@
 ---
-import { zones, site } from '../data/site';
+import { zones } from '../data/site';
 import Icon from './Icon.astro';
 ---
 
@@ -20,10 +20,17 @@ import Icon from './Icon.astro';
     </div>
 
     <div class="zones__map" data-reveal style="--delay:120ms">
-      <div>
-        <span class="pin"><Icon name="map-pin" /></span>
-        <strong>{site.city}</strong>
-        <span>Base de operaciones · {site.region}</span>
+      <span class="pin"><Icon name="map-pin" /></span>
+      <div class="zones__areas">
+        <div class="zone-area">
+          <strong>Alcoy</strong>
+          <span>l'Alcoià y El Comtat</span>
+        </div>
+        <span class="zones__sep" aria-hidden="true"></span>
+        <div class="zone-area">
+          <strong>Alicante</strong>
+          <span>Provincia y Comunidad Valenciana</span>
+        </div>
       </div>
     </div>
   </div>

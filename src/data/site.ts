@@ -15,9 +15,8 @@ export const site = {
   city: 'Alcoy',
   region: 'Alicante',
   schedule: [
-    { days: 'Lunes a Viernes', hours: '8:00 - 20:00' },
-    { days: 'Sábado', hours: '9:00 - 14:00' },
-    { days: 'Domingo', hours: 'Cerrado' },
+    { days: 'Lunes a Viernes', hours: '08:00 - 17:00' },
+    { days: 'Sábados y domingos', hours: 'Cerrado' },
   ],
   url: 'https://xlu1s.github.io/web-escayolas-ivan-lara/',
 };
@@ -117,36 +116,36 @@ export const process: ProcessStep[] = [
   },
 ];
 
-export const reasons = [
-  {
-    title: 'Empresa familiar',
-    text: 'Más de 25 años de oficio pasando de generación en generación. Trato cercano y honesto.',
-    icon: 'family',
-  },
-  {
-    title: 'Trato directo con Ivan Lara',
-    text: 'Hablas siempre con el profesional que ejecuta el trabajo. Sin intermediarios ni sorpresas.',
-    icon: 'person',
-  },
+export const commitments = [
   {
     title: 'Presupuesto sin compromiso',
-    text: 'Presupuesto claro y ajustado, gratis y sin ningún tipo de obligación por tu parte.',
+    text: 'Precio claro, detallado y gratuito. Sin ningún tipo de obligación por tu parte.',
     icon: 'check',
   },
   {
-    title: 'Materiales de calidad',
-    text: 'Trabajamos con primeras marcas y los mejores materiales del sector para un resultado duradero.',
+    title: 'Materiales de primera calidad',
+    text: 'Trabajamos con primeras marcas y los mejores materiales del sector.',
     icon: 'star',
   },
   {
-    title: 'Limpieza y puntualidad',
-    text: 'Dejamos tu casa u obra limpia cada día. Cumplimos los plazos acordados.',
+    title: 'Puntualidad y limpieza',
+    text: 'Cumplimos los plazos y dejamos tu casa u obra limpia en cada jornada.',
     icon: 'broom',
   },
   {
+    title: 'Acabados revisados contigo',
+    text: 'Repasamos el resultado y no damos el trabajo por terminado hasta dejarlo perfecto.',
+    icon: 'check-circle',
+  },
+  {
     title: 'Particulares y constructoras',
-    text: 'Nos adaptamos a reformas pequeñas, viviendas y grandes obras de construcción.',
+    text: 'Nos adaptamos desde reformas pequeñas hasta grandes obras de construcción.',
     icon: 'building',
+  },
+  {
+    title: 'Empresa familiar de Alcoy',
+    text: 'Más de 25 años de oficio cuidando cada trabajo como si fuera nuestro.',
+    icon: 'family',
   },
 ];
 
