@@ -3,14 +3,14 @@ import { Image, getImage } from 'astro:assets';
 import { images } from '../data/images';
 
 const gallery = [
-  { img: images.obra, alt: 'Reforma interior con retirada de tabique en Alcoy' },
-  { img: images.techos, alt: 'Lijado y preparación de techo de placa de yeso' },
-  { img: images.acabados, alt: 'Alisado de pared con llana para un acabado perfecto' },
-  { img: images.pladur, alt: 'Montaje de tabique de pladur en vivienda' },
-  { img: images.escayolas, alt: 'Enlucido de tabique con placa de yeso laminado' },
-  { img: images.enlucido, alt: 'Aplicación de pasta en pared antes de pintar' },
-  { img: images.reforma, alt: 'Obra en curso con nueva instalación y yeso' },
-  { img: images.insonorizacion, alt: 'Instalación de aislamiento acústico con lana mineral' },
+  { img: images.galTabique, alt: 'Montaje de tabiquería seca en obra' },
+  { img: images.galPladur, alt: 'Colocación de placas de yeso laminado en techo' },
+  { img: images.galInstalacion, alt: 'Instalación de placa de yeso en pared' },
+  { img: images.galJuntas, alt: 'Tratamiento de juntas entre placas de yeso' },
+  { img: images.galAtornillado, alt: 'Fijación y atornillado de placa de yeso' },
+  { img: images.galPlaca, alt: 'Acabado de pared con placa lista para pintar' },
+  { img: images.galTechoLijado, alt: 'Lijado de techo para un acabado liso' },
+  { img: images.galAcabado, alt: 'Repaso de esquinas y acabado final' },
 ];
 
 const items = await Promise.all(

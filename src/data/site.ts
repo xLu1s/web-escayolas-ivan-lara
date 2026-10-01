@@ -42,7 +42,7 @@ export const services: Service[] = [
     title: 'Techos de escayola',
     description:
       'Techos continuos enlucidos, registrables y desmontables. Acabados lisos y perfectos para viviendas y locales.',
-    image: 'techos',
+    image: 'techoPladur',
     icon: 'ceiling',
   },
   {
@@ -50,7 +50,7 @@ export const services: Service[] = [
     title: 'Pladur y tabiquería seca',
     description:
       'Tabiques, trasdosados y divisiones con placa de yeso laminado. Soluciones rápidas, limpias y a medida.',
-    image: 'escayolas',
+    image: 'enlucidoPlaca',
     icon: 'wall',
   },
   {
@@ -58,7 +58,7 @@ export const services: Service[] = [
     title: 'Molduras, cenefas y decoración',
     description:
       'Molduras, escocias, arcos y elementos decorativos de escayola. Detalles únicos que transforman cualquier estancia.',
-    image: 'acabados',
+    image: 'moldurasEscayola',
     icon: 'mold',
   },
   {
@@ -74,7 +74,7 @@ export const services: Service[] = [
     title: 'Falsos techos con luz indirecta',
     description:
       'Falsos techos con iluminación integrada, cajones de luz y formas a medida. Elegancia y calidez en cada espacio.',
-    image: 'reforma',
+    image: 'techoDecorativo',
     icon: 'light',
   },
   {
@@ -82,7 +82,7 @@ export const services: Service[] = [
     title: 'Reparaciones y urgencias',
     description:
       'Reparación de techos, grietas, humedades y desperfectos. Intervenciones rápidas y limpias cuando más lo necesitas.',
-    image: 'obra',
+    image: 'lijadoTecho',
     icon: 'tools',
   },
 ];

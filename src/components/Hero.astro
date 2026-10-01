@@ -16,8 +16,8 @@ const hasMp4 = existsSync(join(publicDir, 'hero.mp4'));
 <section class="hero" id="top">
   <div class="hero__media">
     <Image
-      src={images.escayolas}
-      alt="Escayolista de Ivan Lara trabajando un tabique de placa de yeso en Alcoy"
+      src={images.heroEscayolista}
+      alt="Profesional de la construcción en una obra interior"
       widths={[720, 1080, 1600]}
       sizes="100vw"
       loading="eager"
@@ -99,10 +99,12 @@ const hasMp4 = existsSync(join(publicDir, 'hero.mp4'));
   .hero__video {
     opacity: 0;
     transition: opacity 1.1s ease;
-    filter: saturate(1.12) contrast(1.06) brightness(1.1);
+    filter: saturate(1.15) contrast(1.08) brightness(1.14);
+    transform: scale(1.04);
   }
   .hero__video.is-ready {
     opacity: 1;
+    animation: heroVideoDrift 20s ease-in-out infinite alternate;
   }
   .hero__dust {
     position: absolute;
@@ -123,8 +125,20 @@ const hasMp4 = existsSync(join(publicDir, 'hero.mp4'));
     }
   }
 
+  @keyframes heroVideoDrift {
+    from {
+      transform: scale(1.04) translate3d(0, 0, 0);
+    }
+    to {
+      transform: scale(1.22) translate3d(-2.5%, -2%, 0);
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .hero__fallback {
+      animation: none;
+    }
+    .hero__video.is-ready {
       animation: none;
     }
     .hero__dust {
