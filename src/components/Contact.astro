@@ -1,0 +1,95 @@
+---
+import { site } from '../data/site';
+import Icon from './Icon.astro';
+---
+
+<section class="section" id="contacto">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Contacto</span>
+      <h2>Hablemos de tu trabajo</h2>
+      <p>La forma más rápida de conseguir presupuesto es una llamada. Te atendemos encantados.</p>
+    </div>
+
+    <div class="contact__grid">
+      <div class="contact__card" data-reveal>
+        <h3>Contacto directo</h3>
+        <p>Presupuesto sin compromiso, por teléfono o WhatsApp.</p>
+
+        <div class="contact__rows">
+          <div class="contact__row">
+            <span class="ico"><Icon name="phone" /></span>
+            <div>
+              <small>Teléfono</small>
+              <a href={site.phoneHref}>{site.phoneDisplay}</a>
+            </div>
+          </div>
+
+          <div class="contact__row">
+            <span class="ico"><Icon name="whatsapp" /></span>
+            <div>
+              <small>WhatsApp</small>
+              <a href={site.whatsappHref} target="_blank" rel="noopener">{site.phoneDisplay}</a>
+            </div>
+          </div>
+
+          <div class="contact__row">
+            <span class="ico"><Icon name="clock" /></span>
+            <div style="width:100%;">
+              <small>Horario</small>
+              <ul class="contact__hours">
+                {site.schedule.map((s) => (
+                  <li><span>{s.days}</span><strong>{s.hours}</strong></li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact__actions">
+          <a href={site.phoneHref} class="btn"><Icon name="phone" /> Llamar</a>
+          <a href={site.whatsappHref} class="btn btn--wa" target="_blank" rel="noopener">
+            <Icon name="whatsapp" /> WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="contact__card" data-reveal style="--delay:120ms">
+        <h3>Atendemos donde está tu obra</h3>
+        <p>
+          Trabajamos con particulares y constructoras en {site.city} y su comarca. Nos desplazamos a
+          tu vivienda, local o proyecto para valorar el trabajo y darte un presupuesto ajustado.
+        </p>
+
+        <div class="note">
+          <strong>Sin oficina de atención al público.</strong> La atención es telefónica y en la
+          propia obra, para que no pierdas tiempo en desplazamientos.
+        </div>
+
+        <div class="contact__rows" style="margin-top:1.6rem;">
+          <div class="contact__row">
+            <span class="ico"><Icon name="map-pin" /></span>
+            <div>
+              <small>Zona de trabajo</small>
+              <strong>{site.city}, comarca y Comunidad Valenciana</strong>
+            </div>
+          </div>
+          <div class="contact__row">
+            <span class="ico"><Icon name="person" /></span>
+            <div>
+              <small>Te atiende</small>
+              <strong>{site.owner}</strong>
+            </div>
+          </div>
+          <div class="contact__row">
+            <span class="ico"><Icon name="shield" /></span>
+            <div>
+              <small>Garantía</small>
+              <strong>Trabajos con acabado garantizado</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

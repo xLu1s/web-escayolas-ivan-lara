@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import TrustBar from '../components/TrustBar.astro';
+import About from '../components/About.astro';
+import Services from '../components/Services.astro';
+import Process from '../components/Process.astro';
+import Gallery from '../components/Gallery.astro';
+import WhyUs from '../components/WhyUs.astro';
+import Zones from '../components/Zones.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFab from '../components/WhatsAppFab.astro';
+---
+
+<BaseLayout>
+  <Header />
+  <main>
+    <Hero />
+    <TrustBar />
+    <About />
+    <Services />
+    <Process />
+    <Gallery />
+    <WhyUs />
+    <Zones />
+    <CtaBand />
+    <Contact />
+  </main>
+  <Footer />
+  <WhatsAppFab />
+
+  <script>
+    import '../scripts/main.js';
+  </script>
+</BaseLayout>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xlu1s.github.io/web-escayolas-ivan-lara/sitemap-index.xml

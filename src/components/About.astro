@@ -1,0 +1,54 @@
+---
+import { Image } from 'astro:assets';
+import { site } from '../data/site';
+import { images } from '../data/images';
+import Icon from './Icon.astro';
+
+const points = [
+  'Empresa familiar con más de 25 años de experiencia',
+  'Trabajos para particulares, comunidades y constructoras',
+  'Materiales de primera calidad y acabados cuidados',
+  'Desplazamiento por toda la Comunidad Valenciana',
+];
+---
+
+<section class="section section--stone" id="nosotros">
+  <div class="container about__grid">
+    <div class="about__text" data-reveal>
+      <span class="eyebrow">Quiénes somos</span>
+      <h2>Oficio de familia, acabados de primera</h2>
+      <p>
+        Soy <strong>Ivan Lara</strong> y llevo más de {site.years} años dedicado a la escayola, el
+        pladur y los aislamientos en Alcoy y su comarca. Lo que empezó como un oficio de familia se
+        ha convertido en una empresa en la que cada trabajo se cuida como si fuera nuestro.
+      </p>
+      <p>
+        Trabajamos tanto reformas de viviendas como grandes obras de construcción, siempre con
+        trato directo, puntualidad y limpieza. Sin intermediarios: hablas y trabajas con el
+        profesional que ejecuta la obra.
+      </p>
+      <ul class="about__list">
+        {points.map((p) => (
+          <li>
+            <Icon name="check-circle" />
+            <span>{p}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="about__media" data-reveal style="--delay:120ms">
+      <Image
+        src={images.pladur}
+        alt="Instalación de placa de yeso laminado en una reforma de vivienda"
+        widths={[600, 900, 1200]}
+        sizes="(max-width: 900px) 100vw, 46vw"
+        loading="lazy"
+      />
+      <div class="about__badge">
+        <strong>{site.years}+</strong>
+        <span>años de experiencia</span>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+---
+import { stats } from '../data/site';
+---
+
+<section class="trust" aria-label="Datos destacados">
+  <div class="container">
+    <div class="trust__grid">
+      {stats.map((s) => (
+        <div class="trust__item">
+          <strong>{s.value}</strong>
+          <span>{s.label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

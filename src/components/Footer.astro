@@ -1,0 +1,44 @@
+---
+import { site, navLinks } from '../data/site';
+import Icon from './Icon.astro';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__col">
+        <a href="#top" class="brand">
+          <span class="brand__mark" aria-hidden="true">IL</span>
+          <span class="brand__name">
+            Escayolas Ivan Lara
+            <small>Alcoy · desde {year - site.years}</small>
+          </span>
+        </a>
+        <p>
+          Empresa familiar de escayolas, pladur, techos y aislamientos con más de {site.years} años
+          de experiencia en {site.city} y la Comunidad Valenciana.
+        </p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Enlaces del pie">
+        {navLinks.map((l) => <a href={l.href}>{l.label}</a>)}
+      </nav>
+
+      <div class="footer__col">
+        <p style="margin-bottom:.6rem;">Presupuesto sin compromiso</p>
+        <a href={site.phoneHref} class="footer__phone">
+          <Icon name="phone" style="display:inline;width:1em;height:1em;vertical-align:-.12em;" />
+          {site.phoneDisplay}
+        </a>
+        <p style="margin-top:.8rem;">{site.city}, {site.region} · Atención telefónica y en obra</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© {year} {site.name}. Todos los derechos reservados.</span>
+      <span>Hecho con oficio en {site.city}.</span>
+    </div>
+  </div>
+</footer>

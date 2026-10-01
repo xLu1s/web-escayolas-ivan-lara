@@ -1,0 +1,30 @@
+---
+import { zones, site } from '../data/site';
+import Icon from './Icon.astro';
+---
+
+<section class="section section--dark" id="zonas">
+  <div class="container zones__grid">
+    <div data-reveal>
+      <span class="eyebrow">Zonas de servicio</span>
+      <h2>Trabajamos en Alcoy y toda la comarca</h2>
+      <p style="color:rgba(244,239,231,.72);margin-top:1.1rem;">
+        Nos desplazamos por la comarca de l'Alcoià, el Comtat y el resto de la Comunidad Valenciana.
+        Si tienes dudas sobre tu zona, llámanos y te lo confirmamos.
+      </p>
+      <ul class="zones__list">
+        {zones.map((z) => (
+          <li><Icon name="map-pin" /> {z}</li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="zones__map" data-reveal style="--delay:120ms">
+      <div>
+        <span class="pin"><Icon name="map-pin" /></span>
+        <strong>{site.city}</strong>
+        <span>Base de operaciones · {site.region}</span>
+      </div>
+    </div>
+  </div>
+</section>

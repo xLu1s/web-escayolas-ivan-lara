@@ -1,0 +1,24 @@
+---
+import { reasons } from '../data/site';
+import Icon from './Icon.astro';
+---
+
+<section class="section" id="porque">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Por qué elegirnos</span>
+      <h2>Más de 25 años haciendo bien las cosas</h2>
+      <p>La experiencia de un oficio de toda la vida, con la seriedad y el cuidado que tu casa merece.</p>
+    </div>
+
+    <div class="reasons__grid">
+      {reasons.map((r, i) => (
+        <div class="reason" data-reveal style={`--delay:${i * 70}ms`}>
+          <span class="reason__icon"><Icon name={r.icon} /></span>
+          <h3>{r.title}</h3>
+          <p>{r.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

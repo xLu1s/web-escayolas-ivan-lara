@@ -1,0 +1,15 @@
+---
+import { site } from '../data/site';
+import Icon from './Icon.astro';
+---
+
+<a
+  href={site.whatsappHref}
+  class="fab"
+  target="_blank"
+  rel="noopener"
+  aria-label="Escribir por WhatsApp para pedir presupuesto"
+>
+  <Icon name="whatsapp" />
+  <span>Pedir presupuesto</span>
+</a>

@@ -1,0 +1,23 @@
+---
+import { process } from '../data/site';
+---
+
+<section class="section section--dark" id="proceso">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Cómo trabajamos</span>
+      <h2>Sencillo, claro y sin sorpresas</h2>
+      <p>Desde la primera llamada hasta el acabado final, te acompañamos en cada paso.</p>
+    </div>
+
+    <div class="process__grid">
+      {process.map((step, i) => (
+        <div class="step" data-reveal style={`--delay:${i * 90}ms`}>
+          <span class="step__num">{step.step}</span>
+          <h3>{step.title}</h3>
+          <p>{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

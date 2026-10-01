@@ -1,0 +1,60 @@
+---
+import { Image, getImage } from 'astro:assets';
+import { images } from '../data/images';
+
+const gallery = [
+  { img: images.obra, alt: 'Reforma interior con retirada de tabique en Alcoy' },
+  { img: images.techos, alt: 'Lijado y preparación de techo de placa de yeso' },
+  { img: images.acabados, alt: 'Alisado de pared con llana para un acabado perfecto' },
+  { img: images.pladur, alt: 'Montaje de tabique de pladur en vivienda' },
+  { img: images.escayolas, alt: 'Enlucido de tabique con placa de yeso laminado' },
+  { img: images.enlucido, alt: 'Aplicación de pasta en pared antes de pintar' },
+  { img: images.reforma, alt: 'Obra en curso con nueva instalación y yeso' },
+  { img: images.insonorizacion, alt: 'Instalación de aislamiento acústico con lana mineral' },
+];
+
+const items = await Promise.all(
+  gallery.map(async (g) => {
+    const full = await getImage({ src: g.img, width: 1400, format: 'webp' });
+    return { ...g, full: full.src };
+  })
+);
+---
+
+<section class="section section--stone" id="trabajos">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Trabajos</span>
+      <h2>Algunos de nuestros trabajos</h2>
+      <p>
+        Una muestra del día a día: reformas, techos, tabiques y aislamientos ejecutados con
+        acabados cuidados.
+      </p>
+    </div>
+
+    <div class="gallery__grid" data-reveal>
+      {items.map((item) => (
+        <button
+          class="gallery__item"
+          type="button"
+          data-lightbox
+          data-full={item.full}
+          aria-label={`Ampliar imagen: ${item.alt}`}
+        >
+          <Image
+            src={item.img}
+            alt={item.alt}
+            widths={[300, 500, 700]}
+            sizes="(max-width: 620px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            loading="lazy"
+          />
+        </button>
+      ))}
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+  <button class="lightbox__close" id="lightboxClose" aria-label="Cerrar">×</button>
+  <img id="lightboxImg" src="" alt="" />
+</div>

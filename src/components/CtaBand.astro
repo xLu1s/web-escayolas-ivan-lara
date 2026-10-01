@@ -1,0 +1,31 @@
+---
+import { site } from '../data/site';
+import Icon from './Icon.astro';
+---
+
+<section class="section" id="presupuesto" style="padding-top:0;">
+  <div class="container">
+    <div class="cta" data-reveal>
+      <h2>Pide tu presupuesto por teléfono</h2>
+      <p>Sin compromiso y sin coste. Cuéntanos tu idea y te damos precio el mismo día.</p>
+
+      <a href={site.phoneHref} class="cta__phone">
+        <Icon name="phone" /> {site.phoneDisplay}
+      </a>
+
+      <div class="cta__actions">
+        <a href={site.phoneHref} class="btn btn--lg btn--light">
+          <Icon name="phone" /> Llamar ahora
+        </a>
+        <a
+          href={site.whatsappHref}
+          class="btn btn--lg"
+          target="_blank"
+          rel="noopener"
+        >
+          <Icon name="whatsapp" /> Escribir por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

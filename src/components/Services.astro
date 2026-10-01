@@ -1,0 +1,45 @@
+---
+import { Image } from 'astro:assets';
+import { services, site } from '../data/site';
+import { images, type ImageKey } from '../data/images';
+import Icon from './Icon.astro';
+---
+
+<section class="section" id="servicios">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Servicios</span>
+      <h2>Todo en escayola, pladur y aislamientos</h2>
+      <p>
+        Soluciones completas para tu vivienda, local u obra. Nos adaptamos a cada proyecto y te
+        asesoramos con el material y el acabado que mejor encaja.
+      </p>
+    </div>
+
+    <div class="services__grid">
+      {services.map((service, i) => (
+        <article class="card" data-reveal style={`--delay:${i * 80}ms`}>
+          <div class="card__media">
+            <Image
+              src={images[service.image as ImageKey]}
+              alt={service.title}
+              widths={[420, 640, 900]}
+              sizes="(max-width: 620px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              loading="lazy"
+            />
+            <span class="card__icon">
+              <Icon name={service.icon} />
+            </span>
+          </div>
+          <div class="card__body">
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+            <a href={site.phoneHref} class="card__link">
+              Pedir presupuesto <Icon name="arrow-right" />
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
